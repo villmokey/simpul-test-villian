@@ -1,6 +1,6 @@
 export const Searchbar = () => {
   return (
-    <div className="flex relative">
+    <div className="flex relative px-[32px]">
       <svg width="12" height="12" className="absolute right-10 top-2" viewBox="0 0 32 31" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           fillRule="evenodd"

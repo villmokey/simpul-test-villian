@@ -6,6 +6,10 @@ import { FloatingButton } from "./components/molecules/FloatingButton/FloatingBu
 import { ShadowedFloatingButton } from "./components/molecules/FloatingButton/ShadowedFloatingButton";
 import { PopupInbox } from "./components/organism/Popup/PopupInbox";
 
+// 1673568000
+// 1673654400
+// 86400
+
 let inboxData = [
   {
     id: 1,
@@ -14,13 +18,14 @@ let inboxData = [
     user: "Cameron Philips",
     message: "Please check this out",
     isRead: false,
+    participant: 3,
     messages: [
       {
         chatID: 1,
         inboxID: 1,
         name: "me",
         body: "No worries. It will be completed ASAP. I’ve asked him yesterday",
-        chatTime: 1673510400,
+        chatTime: 1673654400,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -30,7 +35,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673654400,
         color: "#E5A443",
         bgColor: "#FCEED3",
         isRead: true,
@@ -40,7 +45,7 @@ let inboxData = [
         inboxID: 1,
         name: "me",
         body: "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -50,7 +55,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Sure thing, Claren",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#E5A443",
         bgColor: "#FCEED3",
       },
@@ -59,7 +64,7 @@ let inboxData = [
         inboxID: 1,
         name: "Obaidullah Amarkhil",
         body: "Morning. I’ll try to do them. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#43B78D",
         bgColor: "#D2F2EA",
       },
@@ -72,13 +77,14 @@ let inboxData = [
     user: "Ellens",
     message: "Hey, Please read",
     isRead: true,
+    participant: 3,
     messages: [
       {
         chatID: 1,
         inboxID: 1,
         name: "me",
         body: "No worries. It will be completed ASAP. I’ve asked him yesterday",
-        chatTime: 1673510400,
+        chatTime: 1673654400,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -88,7 +94,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673654400,
         color: "#E5A443",
         bgColor: "#FCEED3",
         isRead: true,
@@ -98,7 +104,7 @@ let inboxData = [
         inboxID: 1,
         name: "me",
         body: "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
-        chatTime: 1673594669,
+        chatTime: 1673654400,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -108,7 +114,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Sure thing, Claren",
-        chatTime: 1673594669,
+        chatTime: 1673654400,
         color: "#E5A443",
         bgColor: "#FCEED3",
       },
@@ -117,7 +123,7 @@ let inboxData = [
         inboxID: 1,
         name: "Obaidullah Amarkhil",
         body: "Morning. I’ll try to do them. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#43B78D",
         bgColor: "#D2F2EA",
       },
@@ -130,13 +136,14 @@ let inboxData = [
     user: "Cameron Philips",
     message: "I understand your initial concerns and that very valid, Elizabeth. But you...",
     isRead: true,
+    participant: 3,
     messages: [
       {
         chatID: 1,
         inboxID: 1,
         name: "me",
         body: "No worries. It will be completed ASAP. I’ve asked him yesterday",
-        chatTime: 1673510400,
+        chatTime: 1673654400,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -146,7 +153,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673654400,
         color: "#E5A443",
         bgColor: "#FCEED3",
         isRead: true,
@@ -156,7 +163,7 @@ let inboxData = [
         inboxID: 1,
         name: "me",
         body: "Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -166,7 +173,7 @@ let inboxData = [
         inboxID: 1,
         name: "Mary Hilda",
         body: "Sure thing, Claren",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#E5A443",
         bgColor: "#FCEED3",
       },
@@ -175,7 +182,7 @@ let inboxData = [
         inboxID: 1,
         name: "Obaidullah Amarkhil",
         body: "Morning. I’ll try to do them. Thanks",
-        chatTime: 1673594669,
+        chatTime: 1673740800,
         color: "#43B78D",
         bgColor: "#D2F2EA",
       },
@@ -188,6 +195,7 @@ let inboxData = [
     user: "FastVisa Support",
     message: "Hey there! Welcome to your inbox",
     isRead: true,
+    participant: 2,
     messages: [
       {
         chatID: 1,
@@ -204,7 +212,7 @@ let inboxData = [
         inboxID: 4,
         name: "me",
         body: "Hi, I need help with something can you help me ?",
-        chatTime: 1673594669,
+        chatTime: 1673568000,
         color: "#9B51E0",
         bgColor: "#EEDCFF",
         isRead: true,
@@ -216,6 +224,9 @@ let inboxData = [
 function App() {
   const [quickIsOpen, setQuickIsOpen] = useState(false);
   const [menuIsOpen, setMenuIsOpen] = useState("");
+  const [inboxVis, setInboxVis] = useState(false);
+  const [taskVis, setTaskVis] = useState(false);
+  const [isLoadingChat, setIsLoadingChat] = useState(true);
 
   const openQuicksMenu = () => {
     setQuickIsOpen(!quickIsOpen);
@@ -223,15 +234,27 @@ function App() {
 
   const openMenu = (menu) => {
     setMenuIsOpen(menu);
+    if (menu === "inbox") {
+      setInboxVis(true);
+      setTaskVis(false);
+      setTimeout(() => setIsLoadingChat(false), [1000]);
+    } else {
+      setTaskVis(true);
+      setInboxVis(false);
+    }
   };
 
   const closeMenu = () => {
     setMenuIsOpen("");
     setQuickIsOpen(true);
+    setInboxVis(false);
+    setTaskVis(false);
     setTimeout(() => {
       setQuickIsOpen(false);
     }, 300);
   };
+
+  const openInbox = () => {};
 
   return (
     <div className="flex">
@@ -251,7 +274,7 @@ function App() {
         </div>
         <div className="container">
           <div className="fixed right-10 bottom-[8rem]">
-            <PopupInbox inboxData={inboxData} />
+            <PopupInbox inboxData={inboxData} visibility={inboxVis} loading={isLoadingChat} />
           </div>
           <div
             className={`
