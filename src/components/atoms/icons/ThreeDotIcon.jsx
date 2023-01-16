@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-export const ThreeDotIcon = ({ width, height, className, fillColor }) => {
+export const ThreeDotIcon = ({ width, height, className, fillColor, onClick }) => {
   return (
-    <svg width={width} height={height} className={className} viewBox="0 0 12 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg onClick={onClick} width={width} height={height} className={className} viewBox="0 0 12 4" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fillRule="evenodd"
         clipRule="evenodd"

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { InboxIcon } from "./components/atoms/icons/InboxIcon";
 import { QuickIcon } from "./components/atoms/icons/QuickIcon";
 import { TaskIcon } from "./components/atoms/icons/TaskIcon";
 import { FloatingButton } from "./components/molecules/FloatingButton/FloatingButton";
 import { ShadowedFloatingButton } from "./components/molecules/FloatingButton/ShadowedFloatingButton";
 import { PopupInbox } from "./components/organism/Popup/PopupInbox";
+import { PopupTask } from "./components/organism/Popup/PopupTask";
 
 // 1673568000
 // 1673654400
@@ -221,12 +222,56 @@ let inboxData = [
   },
 ];
 
+let taskData = [
+  {
+    taskID: 1,
+    taskName: "Close off Case #012920- RODRIGUES, Amiguel",
+    date: "01/10/2021",
+    deadline: "2 Days left",
+    description: "",
+    isDone: false,
+  },
+  {
+    taskID: 2,
+    taskName: "Set up documentation report for several Cases : Case 145443, Case 192829 and Case 182203 ",
+    date: "02/10/2021",
+    deadline: "4 Days left",
+    description: "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in.",
+    isDone: false,
+  },
+  {
+    taskID: 3,
+    taskName: "Set up appointment with Dr Blake",
+    date: "01/06/2021",
+    deadline: "10 Days left",
+    description: "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in.",
+    isDone: false,
+  },
+  {
+    taskID: 4,
+    taskName: "Contact Mr Caleb - video conference?",
+    date: "03/06/2021",
+    deadline: "4 Days left",
+    description: "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in.",
+    isDone: true,
+  },
+  {
+    taskID: 5,
+    taskName: "Assign 3 homework to Client A",
+    date: "02/06/2021",
+    deadline: "10 Days left",
+    description: "All Cases must include all payment transactions, all documents and forms filled. All conversations in comments and messages in channels and emails should be provided as well in.",
+    isDone: true,
+  },
+];
+
 function App() {
   const [quickIsOpen, setQuickIsOpen] = useState(false);
   const [menuIsOpen, setMenuIsOpen] = useState("");
   const [inboxVis, setInboxVis] = useState(false);
   const [taskVis, setTaskVis] = useState(false);
-  const [isLoadingChat, setIsLoadingChat] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [taskDataSource, setTaskDataSource] = useState(taskData);
 
   const openQuicksMenu = () => {
     setQuickIsOpen(!quickIsOpen);
@@ -237,10 +282,11 @@ function App() {
     if (menu === "inbox") {
       setInboxVis(true);
       setTaskVis(false);
-      setTimeout(() => setIsLoadingChat(false), [1000]);
+      setTimeout(() => setIsLoading(false), [1000]);
     } else {
       setTaskVis(true);
       setInboxVis(false);
+      setTimeout(() => setIsLoading(false), [1000]);
     }
   };
 
@@ -254,7 +300,10 @@ function App() {
     }, 300);
   };
 
-  const openInbox = () => {};
+  const addTask = () => {
+    let lastId = taskData[taskData.length - 1].taskID;
+    setTaskDataSource((prev) => [...prev, { taskID: lastId + 1, taskName: "", date: "", deadline: "", description: "", isDone: false }]);
+  };
 
   return (
     <div className="flex">
@@ -274,7 +323,8 @@ function App() {
         </div>
         <div className="container">
           <div className="fixed right-10 bottom-[8rem]">
-            <PopupInbox inboxData={inboxData} visibility={inboxVis} loading={isLoadingChat} />
+            <PopupInbox inboxData={inboxData} visibility={inboxVis} loading={isLoading} />
+            <PopupTask visibility={taskVis} dataSource={taskDataSource} loading={isLoading} addTask={addTask} />
           </div>
           <div
             className={`
