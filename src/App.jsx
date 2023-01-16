@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { InboxIcon } from "./components/atoms/icons/InboxIcon";
 import { QuickIcon } from "./components/atoms/icons/QuickIcon";
@@ -6,10 +7,6 @@ import { FloatingButton } from "./components/molecules/FloatingButton/FloatingBu
 import { ShadowedFloatingButton } from "./components/molecules/FloatingButton/ShadowedFloatingButton";
 import { PopupInbox } from "./components/organism/Popup/PopupInbox";
 import { PopupTask } from "./components/organism/Popup/PopupTask";
-
-// 1673568000
-// 1673654400
-// 86400
 
 let inboxData = [
   {
@@ -279,6 +276,7 @@ function App() {
 
   const openMenu = (menu) => {
     setMenuIsOpen(menu);
+    setIsLoading(true);
     if (menu === "inbox") {
       setInboxVis(true);
       setTaskVis(false);
@@ -286,7 +284,20 @@ function App() {
     } else {
       setTaskVis(true);
       setInboxVis(false);
-      setTimeout(() => setIsLoading(false), [1000]);
+      axios.get("https://jsonplaceholder.typicode.com/todos?_limit=5").then((res) => {
+        let fetchRes = res.data.map((item, index) => {
+          return {
+            taskID: item.id,
+            taskName: item.title,
+            date: "01/10/2021",
+            deadline: "2 Days left",
+            description: item.title,
+            isDone: item.completed,
+          };
+        });
+        setTaskDataSource(fetchRes);
+        setIsLoading(false);
+      });
     }
   };
 
